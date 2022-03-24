@@ -14,6 +14,7 @@ Testing dataset is inside "testset" which you can download from the referenced r
 
 # Results
 To reproduce results like in the paper, train the model for 100 epochs. The results should look similar to this:
+![LR_Input](https://github.com/Indraa145/AdversarialFeatureMapsSR/blob/main/resources/LR_Input.JPG)
 ![results](https://github.com/Indraa145/AdversarialFeatureMapsSR/blob/main/resources/Results.JPG)
 
 # Running
