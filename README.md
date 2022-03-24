@@ -14,7 +14,7 @@ Testing dataset is inside "testset" which you can download from the referenced r
 
 # Results
 To reproduce results like in the paper, train the model for 100 epochs. The results should look similar to this:
-![results](https://github.com/Indraa145/AdversarialFeatureMapsSR/resources/Results.JPG "Results")
+![results](https://github.com/Indraa145/AdversarialFeatureMapsSR/blob/main/resources/Results.JPG)
 
 # Running
 For training, the intermediate results will be saved inside "intermid_results_revised" folder. The saved file consists of:
