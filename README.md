@@ -3,9 +3,9 @@ This repository is the Implementation of our paper: <br>
 Imanuel, I. and Lee, S. (2022), Super-resolution with adversarial loss on the feature maps of the generated high-resolution image. Electron. Lett., 58: 47-49. https://doi.org/10.1049/ell2.12360
 
 # Dataset
-The dataset used for training and testing are taken from this repository. <br>
+The dataset used for training and testing are taken from [this repository.](https://github.com/jingyang2017/Face-and-Image-super-resolution) <br>
 Training Dataset:
-1. Locate inside the "Dataset" folder from the referenced repository
+1. Locate inside the "Dataset" folder from the [referenced repository](https://github.com/jingyang2017/Face-and-Image-super-resolution)
 2. Extract the files
 3. After you extract the files, you can find High Resolution data is inside "HIGH" folder, and Low Resolution data is inside "LOW" folder
 4. You can modify the dataset directory to your needs in this code inside "dataset/data_train.py".
@@ -13,9 +13,15 @@ Training Dataset:
 Testing dataset is inside "testset" which you can download from the referenced repository. You can modify the dataset directory to your needs in this code inside "dataset/data_test.py".
 
 # Results
-The results provided in this repository are from the model trained for 5 epochs. To achieve results like in the paper, train the model for 100 epochs. After training for 100 epochs, the result should be similar to the ones in the paper:
+To reproduce results like in the paper, train the model for 100 epochs. The results should look similar to this:
+![results](https://github.com/Indraa145/AdversarialFeatureMapsSR/resources/Results.JPG "Results")
 
 # Running
+For training, the intermediate results will be saved inside "intermid_results_revised" folder. The saved file consists of:
+1. The intermediate images (inside intermid_results_revised/imgs/ folder)
+2. The intermediate model (inside intermid_results_revised/model/ folder)
+3. The loss logs in .csv (inside intermid_results_revised/csv/ folder) <br>
+
 To train the model using VGG16 pretrained network:
 ```python train_vgg.py --gpu your_gpu_number``` <br><br>
 To train the model using ResNet18 pretrained network:
@@ -27,7 +33,7 @@ To evaluate the model using the FID metric, run the following command: <br>
 ```python evaluation/fid_score.py ./Dataset_bulat/HIGH/SRtrainset_2/ ./test_res/```
 
 # Citation
-If you find our work useful in your work, please consider citing:
+If you find our work useful for your work, please consider citing:
 ```
 @article{https://doi.org/10.1049/ell2.12360,
 author = {Imanuel, I. and Lee, S.},
@@ -45,5 +51,5 @@ year = {2022}
 ```
 # References
 This code was made by using the help and references from these code:
-1. yoon28 unpaired_face_sr and jingyang2017 Face-and-Image-super-resolution as the base skeleton for this code
-2. mseitzer pytorch-fid for the FID metric evaluation code
+1. [yoon28 unpaired_face_sr](https://github.com/yoon28/unpaired_face_sr) and [jingyang2017 Face-and-Image-super-resolution](https://github.com/jingyang2017/Face-and-Image-super-resolution) as the base skeleton for this code
+2. [mseitzer pytorch-fid](https://github.com/mseitzer/pytorch-fid) for the FID metric evaluation code
