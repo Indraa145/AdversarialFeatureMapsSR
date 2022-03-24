@@ -3,10 +3,28 @@ This repository is the Implementation of our paper: <br>
 Imanuel, I. and Lee, S. (2022), Super-resolution with adversarial loss on the feature maps of the generated high-resolution image. Electron. Lett., 58: 47-49. https://doi.org/10.1049/ell2.12360
 
 # Dataset
-The dataset used for training and testing are taken from this repository.
+The dataset used for training and testing are taken from this repository. <br>
+Training Dataset:
+1. Locate inside the "Dataset" folder from the referenced repository
+2. Extract the files
+3. After you extract the files, you can find High Resolution data is inside "HIGH" folder, and Low Resolution data is inside "LOW" folder
+4. You can modify the dataset directory to your needs in this code inside "dataset/data_train.py".
+
+Testing dataset is inside "testset" which you can download from the referenced repository. You can modify the dataset directory to your needs in this code inside "dataset/data_test.py".
 
 # Results
+The results provided in this repository are from the model trained for 5 epochs. To achieve results like in the paper, train the model for 100 epochs. After training for 100 epochs, the result should be similar to the ones in the paper:
 
+# Running
+To train the model using VGG16 pretrained network:
+```python train_vgg.py --gpu your_gpu_number``` <br><br>
+To train the model using ResNet18 pretrained network:
+```python train_resnet.py --gpu your_gpu_number``` <br><br>
+To test the model on the low-resolution widerface dataset:
+```python test.py``` <br>
+The file will be saved inside the "test_res" folder <br><br>
+To evaluate the model using the FID metric, run the following command: <br>
+```python evaluation/fid_score.py ./Dataset_bulat/HIGH/SRtrainset_2/ ./test_res/```
 
 # Citation
 If you find our work useful in your work, please consider citing:
@@ -26,4 +44,6 @@ year = {2022}
 }
 ```
 # References
-This code was made by using these code here as base skeleton:
+This code was made by using the help and references from these code:
+1. yoon28 unpaired_face_sr and jingyang2017 Face-and-Image-super-resolution as the base skeleton for this code
+2. mseitzer pytorch-fid for the FID metric evaluation code
